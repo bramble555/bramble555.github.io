@@ -1,6 +1,6 @@
 # Site settings
-title: bramble Blog
-SEOTitle: 熊二的博客 | bramble Blog
+title: Bramble Blog
+SEOTitle: 熊二的博客 | Bramble Blog
 header-img: img/home-bg.jpg
 # email: huxpro@gmail.com
 description: "个人博客,主要自己记录，顺便帮助他人"
@@ -75,8 +75,8 @@ ga_domain: huangxuan.me
 
 # Sidebar settings
 sidebar: true # whether or not using Sidebar.
-sidebar-about-description: "自己给自己打气 加油"
-sidebar-avatar: https://i.postimg.cc/G3XbSF2m/F9-HO-QMCPTTNEK-9-O-ZE.jpg # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-about-description: "个人博客,主要自己记录，顺便帮助他人"
+sidebar-avatar: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtQOMKERvIZv25_frGhNvLK-8HOLsDVNE7FA&s # use absolute URL, seeing it's used in both `/` and `/about/`
 
 # Featured Tags
 featured-tags: true # whether or not using Feature-Tags
