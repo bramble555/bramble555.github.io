@@ -75,7 +75,7 @@ ga_domain: huangxuan.me
 
 # Sidebar settings
 sidebar: true # whether or not using Sidebar.
-sidebar-about-description: "个人博客,主要自己记录，顺便帮助他人"
+sidebar-about-description: "嘿嘿"
 sidebar-avatar: https://i.postimg.cc/G3XbSF2m/F9-HO-QMCPTTNEK-9-O-ZE.jpg # use absolute URL, seeing it's used in both `/` and `/about/`
 
 # Featured Tags
