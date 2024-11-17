@@ -7,7 +7,7 @@ hero:
   tagline: —— By WJZ_P
   image:
     src: /hi.png
-    alt: Kitty
+    alt: gyx
   actions:
     - theme: brand
       text: 快来快来
