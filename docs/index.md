@@ -1,25 +1,29 @@
 ---
-# https://vitepress.dev/reference/default-theme-home-page
 layout: home
 
 hero:
-  name: "My Awesome Project"
-  text: "A VitePress Site"
-  tagline: My great project tagline
+  name: WJZ_P的个人博客
+  text: 欢迎！
+  tagline: —— By WJZ_P
+  image:
+    src: /hi.png
+    alt: Kitty
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
+      text: 快来快来
+      link: /articles/组件库环境搭建
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: View on Gitee
+      link: https://gitee.com/geeksdidi
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - icon: ⚡️
+    title: 这是一个闪电图标
+    details: wawawa
+  - icon: 🖖
+    title: 这是一个手掌图标
+    details: good...
+  - icon: 🛠️
+    title: 这是一个修理图标
+    details: cocococo
 ---
-
