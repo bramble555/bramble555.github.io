@@ -10,8 +10,8 @@ hero:
     alt: gyx
   actions:
     - theme: brand
-      text: 快来快来
-      link: /articles/组件库环境搭建
+      text: 让我康康！
+      link: /introduction/自我介绍.md
     - theme: alt
       text: View on GitHub
       link: https://github.com/WJZ-P/WJZ-P.github.io
@@ -30,7 +30,24 @@ features:
 
 [//]: # (<Counter></Counter>)
 
-<head>
-<title>WJZ_P的个人博客</title>
-<link rel="shortcut icon" type="image/x-icon" href="/hi.png">
-</head>
+
+
+<div class="viewed-count">
+<h2>网站总访问量：</h2>
+<img class="kitten-sign" src="https://count.getloli.com/get/@IloveKitten?theme=rule21" alt="访问人数">
+</div>
+
+<style>
+.viewed-count{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.kitten-sign{
+    width: 50%;
+}
+
+</style>
