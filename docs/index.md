@@ -32,13 +32,13 @@ features:
 
 
 
-[//]: # (<div class="viewed-count">)
+<div class="viewed-count">
 
-[//]: # (<h2>网站总访问量123：</h2>)
+<h2>网站总访问量：</h2>
 
-[//]: # (<img class="kitten-sign" src="https://count.getloli.com/get/@IloveKitten?theme=rule21" alt="访问人数">)
+<img class="kitten-sign" src="https://count.getloli.com/get/@IloveKitten?theme=rule21" alt="访问人数">
 
-[//]: # (</div>)
+</div>
 
 [//]: # ()
 [//]: # (<style>)
