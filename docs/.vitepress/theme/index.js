@@ -1,4 +1,5 @@
 import Theme from 'vitepress/theme'
+import './style/var.css'
 import Counter from './components/Counter.vue'
 
 export default {
