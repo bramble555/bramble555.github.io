@@ -26,5 +26,9 @@
 
 .kitten-sign {
   width: 50%;
+  transition: 0.3s;
+  &:hover{
+    scale: 1.05;
+  }
 }
 </style>

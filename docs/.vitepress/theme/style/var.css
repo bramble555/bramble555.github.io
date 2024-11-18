@@ -15,6 +15,13 @@
     }
 }
 
+.VPLink{
+    transition: 0.3s;
+    &:hover{
+        border: 1px solid #66ccff;
+    }
+}
+
 /* 旋转动画 */
 @keyframes rotate {
     from {
