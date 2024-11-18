@@ -27,3 +27,5 @@ features:
     title: 这是一个修理图标
     details: cocococo
 ---
+
+<Counter></Counter>
