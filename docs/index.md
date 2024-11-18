@@ -28,4 +28,4 @@ features:
     details: cocococo
 ---
 
-<Counter></Counter>
+[//]: # (<Counter></Counter>)
