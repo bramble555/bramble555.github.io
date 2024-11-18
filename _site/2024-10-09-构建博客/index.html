@@ -1,0 +1,33 @@
+<h1 id="github-page--jekyll--在-windows-系统下搭建博客">Github Page &amp; Jekyll  在 Windows 系统下搭建博客</h1>
+<p><a href="https://xiaowangye.org/posts/how-to-build-your-own-github-blog-site-with-huxpro/">参考博客</a>
+只是这篇文章 不是Windows</p>
+<ol>
+  <li>下载 <a href="https://rubyinstaller.org/downloads/">ruby</a> 最后检查是否安装成功
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>ruby -v
+gem -v
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+  <li>安装bundler &amp; jekyll
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre>gem sources --add https://gems.ruby-china.com/ –-remove https://rubygems.org
+bundle config mirror.https://rubygems.org https://mirrors.tuna.tsinghua.edu.cn/rubygems
+gem install bundler
+gem install jekyll (不知是否需要)
+gem install jekyll-paginate
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+    <p>notes: 这些命令需要在你 clone 的目录下面</p>
+  </li>
+  <li>启动
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>jekyll s
+http://127.0.0.1:4000 
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+</ol>

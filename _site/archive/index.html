@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="个人博客, 主要记录，顺便帮助他人">
+    <meta name="keywords"
+        content="啊a a , Hux黄玄, Hux, 鬼栈, huxpro, @huxpro, 黄玄的博客, Hux Blog, 博客, 个人网站, 互联网, Web, JavaScript, React, React Native, 前端, 设计">
+    <meta name="theme-color" content="#000000">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Archive - 熊二的博客 | bramble Blog">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="「我干了什么 究竟拿了时间换了什么」">
+    <meta property="og:image" content="http://localhost:4000/img/bg-little-universe.jpg"> <!-- 修正了图片路径 -->
+    <meta property="og:url" content="http://localhost:4000/archive/">
+    <meta property="og:site_name" content="熊二的博客 | bramble Blog">
+
+    <title>Archive - 熊二的博客 | bramble Blog</title>
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/pwa/manifest.json">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="http://localhost:4000/archive/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css"> <!-- 修正了路径 -->
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/hux-blog.min.css"> <!-- 修正了路径 -->
+
+    <!-- Custom Fonts -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
+        type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Google AdSense -->
+    <script data-ad-client="ca-pub-6487568398225121" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+
+<body ontouchstart="">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">bramble Blog</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div id="huxblog_navbar">
+                <div class="navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="/archive/">Archive</a></li>
+                        <li class="search-icon">
+                            <a href="javascript:void(0)">
+                                <i class="fa fa-search"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Search -->
+    <div class="search-page">
+        <div class="search-icon-close-container">
+            <span class="search-icon-close">
+                <i class="fa fa-chevron-down"></i>
+            </span>
+        </div>
+        <div class="search-main container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <form>
+                        <input type="text" id="search-input" placeholder="$ grep...">
+                    </form>
+                    <div id="search-results" class="mini-post-list"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <header class="intro-header" style="background-image: url('/img/bg-little-universe.jpg')">
+        <div class="header-mask"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading" id="tag-heading">
+                        <h1>Archive</h1>
+                        <span class="subheading">「我干了什么 究竟拿了时间换了什么」</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <!-- Tags (as filter) -->
+                <div id='tag_cloud' class="tags tags-sup js-tags">
+                    <a class="tag-button--all" data-encode="">
+                        Show All
+                        <sup>1</sup>
+                    </a>
+                </div>
+
+                <!-- Article List -->
+                <div class="mini-post-list js-result d-none">
+                    <section>
+                        <span class="fa listing-seperator">
+                            <span class="tag-text">2024</span>
+                        </span>
+                        <div class="post-preview item" data-tags="">
+                            <a href="/2024-10-09-%E6%9E%84%E5%BB%BA%E5%8D%9A%E5%AE%A2/">
+                                <h2 class="post-title">构建博客</h2>
+                            </a>
+                            <hr>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <!-- SNS Link -->
+                    <ul class="list-inline text-center">
+                        <li>
+                            <a target="_blank" href="https://github.com/bramble555">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <p class="copyright text-muted">
+                        Copyright &copy; bramble Blog 2024
+                        <br>
+                        Powered by <a href="http://huangxuan.me">Hux Blog</a> |
+                        <iframe style="margin-left: 2px; margin-bottom: -5px;" frameborder="0" scrolling="0"
+                            width="100px" height="20px"
+                            src="https://ghbtns.com/github-btn.html?user=huxpro&repo=huxpro.github.io&type=star&count=true"></iframe>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="/js/jquery.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/js/bootstrap.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="/js/hux-blog.min.js"></script>
+</body>
+
+</html>
