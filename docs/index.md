@@ -29,3 +29,8 @@ features:
 ---
 
 [//]: # (<Counter></Counter>)
+
+<head>
+<title>WJZ_P的个人博客</title>
+<link rel="shortcut icon" type="image/x-icon" href="/hi.png">
+</head>
