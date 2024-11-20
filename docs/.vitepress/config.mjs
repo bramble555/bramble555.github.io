@@ -34,6 +34,12 @@ export default defineConfig({
                 ]
             },
             {
+                text: '编程相关',
+                items: [
+                    {text: '专业术语', link: '/coding/专业术语'},
+                ]
+            },
+            {
                 text: '其他',
                 items: [
                     {text: '杂项', link: '/others/其他'},
