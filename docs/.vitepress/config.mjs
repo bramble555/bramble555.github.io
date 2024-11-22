@@ -37,6 +37,8 @@ export default defineConfig({
                 text: '编程相关',
                 items: [
                     {text: '专业术语', link: '/coding/专业术语'},
+                    {text: '力扣好题',link: '/coding/LeetCode好题'},
+                    {text: 'Java源码',link: '/coding/Java源码'}
                 ]
             },
             {
