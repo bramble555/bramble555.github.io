@@ -43,3 +43,68 @@ animalList.add(new Cat());
 那么假如拿出来的是狗，我们调用了bark方法，让小狗汪汪叫，这是正常的，万一我们拿到的是抽象的哺乳类动物就会出错了，哺乳类动物可不一定都会汪汪叫哦！
 
 综上，我们就可以知道为什么 ``extends`` 修饰的变量不允许添加，但允许读取。而 ``super`` 修饰的变量允许添加却不允许读取了。
+
+### Java foreach陷阱
+
+阿里面试官：为什么Java开发手册强制不要在 foreach 里进行元素删除？
+
+#### 关于fail-fast
+
+fail-fast 是一种通用的系统设计思想，一旦检测到可能会发生错误，就立马抛出异常，程序将不再往下执行。
+
+如果想使用for-each来删除元素，不可以直接删除，如
+```java
+List<String> list = new ArrayList<>();
+list.add("沉默王二");
+list.add("沉默王三");
+list.add("一个文章真特么有趣的程序员");
+
+for (String str : list) {
+	if ("沉默王二".equals(str)) {
+		list.remove(str);
+	}
+}
+
+System.out.println(list);
+```
+
+这样写会报错，因为也就是说，remove 的时候触发执行了 checkForComodification 方法，
+该方法对 modCount 和 expectedModCount 进行了比较，发现两者不等，就抛出了 ConcurrentModificationException 异常。
+应该使用Iterator或者stream。
+
+```java
+List<String> list = new ArrayList<>();
+list.add("沉默王二");
+list.add("沉默王三");
+list.add("一个文章真特么有趣的程序员");
+
+Iterator<String> itr = list.iterator();
+
+while (itr.hasNext()) {
+	String str = itr.next();
+	if ("沉默王二".equals(str)) {
+		itr.remove();
+	}
+}
+```
+
+Iterator的remove方法内部有重要的一行：
+```java
+public void remove() {
+    if (lastRet < 0) // 如果没有上一个返回元素的索引，则抛出异常
+        throw new IllegalStateException();
+    checkForComodification(); // 检查 ArrayList 是否被修改过
+
+    try {
+        ArrayList.this.remove(lastRet); // 删除上一个返回元素
+        cursor = lastRet; // 更新下一个元素的索引
+        lastRet = -1; // 清空上一个返回元素的索引
+        expectedModCount = modCount; // 更新 ArrayList 的修改次数
+    } catch (IndexOutOfBoundsException ex) {
+        throw new ConcurrentModificationException(); // 抛出异常
+    }
+}
+```
+
+其中的expectedModCount = modCount; // 更新 ArrayList 的修改次数
+就避免了报错，并且会正确修改索引，不会导致有的元素被跳过。
