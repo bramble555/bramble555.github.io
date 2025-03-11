@@ -50,6 +50,12 @@ export default defineConfig({
                 ]
             },
             {
+                text: '计算机网络笔记',
+                items: [
+                    {text: '基础',link:'/network/计网基础'},
+                ]
+            },
+            {
                 text: '其他',
                 items: [
                     {text: '杂项', link: '/others/其他'},
