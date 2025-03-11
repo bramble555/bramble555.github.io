@@ -40,7 +40,13 @@ export default defineConfig({
                     {text: '力扣好题',link: '/coding/LeetCode好题'},
                     {text: 'Java源码',link: '/coding/Java源码'},
                     {text: 'Java细节',link:'/coding/Java细节'},
-                    {text: 'MySQL学习',link:'/coding/MySQL笔记'},
+
+                ]
+            },
+            {
+                text: 'MySQL笔记',
+                items: [
+                    {text: '基础',link:'/MySQL/基础'},
                 ]
             },
             {
