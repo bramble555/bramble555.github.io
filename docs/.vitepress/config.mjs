@@ -39,7 +39,8 @@ export default defineConfig({
                     {text: '专业术语', link: '/coding/专业术语'},
                     {text: '力扣好题',link: '/coding/LeetCode好题'},
                     {text: 'Java源码',link: '/coding/Java源码'},
-                    {text: 'Java细节',link:'/coding/Java细节'}
+                    {text: 'Java细节',link:'/coding/Java细节'},
+                    {text: 'MySQL学习',link:'/coding/MySQL笔记'},
                 ]
             },
             {

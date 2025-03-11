@@ -1,4 +1,4 @@
-# Java细节
+# Java学习笔记
 
 ### ```expends```和```super```修饰符
 
