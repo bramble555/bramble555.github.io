@@ -47,12 +47,15 @@ export default defineConfig({
                 text: 'MySQL笔记',
                 items: [
                     {text: '基础',link:'/MySQL/基础'},
+                    {text: '索引',link:'/MySQL/索引'},
+                    {text: 'B+树',link:'/MySQL/为什么MySQL用B+树'},
                 ]
             },
             {
                 text: '计算机网络笔记',
                 items: [
                     {text: '基础',link:'/network/计网基础'},
+                    {text: '基础',link:'/network/HTTP篇'},
                 ]
             },
             {
