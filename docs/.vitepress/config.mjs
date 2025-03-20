@@ -66,6 +66,12 @@ export default defineConfig({
                     {text: '杂项', link: '/others/其他'},
                 ]
             },
+            {
+                text: '面试相关',
+                items: [
+                    {text: '面经', link: '/interview/面经'},
+                ]
+            },
         ],
 
         socialLinks: [
