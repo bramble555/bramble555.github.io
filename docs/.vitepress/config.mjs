@@ -72,6 +72,12 @@ export default defineConfig({
                     {text: '面经', link: '/interview/面经'},
                 ]
             },
+            {
+                text: 'Java学习',
+                items: [
+                    {text: '并发编程', link: '/Java/并发编程'},
+                ]
+            }
         ],
 
         socialLinks: [
