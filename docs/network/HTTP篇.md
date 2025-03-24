@@ -225,4 +225,114 @@ HTTP/1.1是请求、响应模型。它的管道模式是默认不使用的。为
 
 ##### 有损压缩。
 
-常用于音频、图片、视频等容忍一定程度数据损失的场景，
+常用于音频、图片、视频等容忍一定程度数据损失的场景。
+
+## HTTPS RSA握手解析
+
+![image](https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost4@main/%E7%BD%91%E7%BB%9C/https/https%E6%8F%90%E7%BA%B2.png)
+
+### TLS握手过程
+
+HTTP是明文传输，有窃听风险、篡改风险、冒充风险。
+
+HTTPS是在HTTP和TCP层之间加入了TLS协议来解决上述的风险。
+
+TLS协议怎么解决HTTP的风险？
+- 信息加密：HTTP交互信息是被加密的，第三方无法窃取。
+- 校验机制：校验信息传输过程中被篡改会有警告。
+- 身份证书：证明网站可靠性。
+
+![image](https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost4@main/%E7%BD%91%E7%BB%9C/https/tls%E6%8F%A1%E6%89%8B.png)
+
+从图中可以发现，通常只需要四个消息就可以完成TLS握手，也就是两个RTT的时延。
+
+在加密应用消息的时候，用的是对称加密密钥，而这个密钥泄露了就完蛋了，所以传输这个对称密钥的时候要用非对称加密的方式来保护。
+
+### RSA握手过程
+
+传统的TLS握手基本是使用RSA算法来实现密钥交换的，在把TLS证书部署到服务端时，证书文件其实就是服务端的公钥，会在TLS握手阶段传递给客户端，而服务端的私钥一直留在服务端，确保私钥不能被窃取。
+
+在RSA密钥协商算法中，客户端会生成随机密钥，用服务端的公钥加密之后再传给服务端。
+![image](https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost4@main/%E7%BD%91%E7%BB%9C/https/https_rsa.png)
+
+#### TLS第一次握手
+
+客户端发送一个`Client Hello`消息，内含客户端的TLS版本号、支持的密码套件列表、生成的随机数(被服务端保留来生成对称加密密钥)。
+![image](https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost4@main/%E7%BD%91%E7%BB%9C/https/clienthello.png)
+
+#### TLS第二次握手
+
+服务端收到客户端的hello消息之后，会确认TLS版本号是否支持、选择客户端发来的可接收密码套件列表中选择一个，以及生成随机数。
+
+接着返回`Server Hello`消息，消息里面有服务器确认的TLS版本号，也给出服务端的随机数，并选择密码套件。
+
+![image](https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost4@main/%E7%BD%91%E7%BB%9C/https/serverhello.png)
+
+然后，服务端为了验证自己的身份会发送`Server Certificate`给客户端，包含了数字证书。
+
+![image](https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost4@main/%E7%BD%91%E7%BB%9C/https/certificate.png)
+
+最后服务端发回`Server Hello Done`消息，本次打招呼完毕。
+
+#### 客户端验证证书
+
+收到服务端的证书后，客户端就要验证证书是否合法。
+
+##### 数字证书的内容
+- 公钥
+- 持有者信息
+- 证书认证机构CA的信息
+- CA对文件的数字签名，以及使用的算法
+- 证书有效期
+- 其他额外信息
+
+![image](https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost4@main/%E7%BD%91%E7%BB%9C/https/%E8%AF%81%E4%B9%A6%E7%9A%84%E6%A0%A1%E9%AA%8C.png)
+
+##### CA签发证书流程
+
+- CA会把持有者的公钥、用途、颁发者、有效时间等信息打包，做哈希验算得到一个哈希值。
+- CA用自己的私钥对哈希值加密，生成`Certificate Signature`，也就是签名做了签名。
+- 最后签名添加在文件证书上，形成数字证书。
+
+##### 客户端校验证书流程
+
+- 客户端从数字证书能知道CA用的哪种哈希算法，用同样的算法计算证书得到一个哈希值H1。
+- 浏览器和操作系统会内置CA公钥信息，尝试用公钥去解密证书签名，得到哈希值H2。
+- 最后比较H1和H2、值相同说明是可信赖的证书。
+
+#### TLS第三次握手
+
+此时，客户端已经完成了证书的校验了。
+
+客户端生成一个新的随机数(pre-master)，用服务器的RSA公钥加密这个随机数，通过`Client Key Exchange`消息传给服务端。
+
+![image](https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost4@main/%E7%BD%91%E7%BB%9C/https/clietnkeyexchange.png)
+
+服务端收到之后，用RSA私钥解密，得到客户端发来的随机数pre-master.
+
+至此，客户端和服务端共享了三个随机数。 `Client Random`、`Server Random`、 `pre-master`。
+
+于是，双方根据已经得到的三个随机数，生成会话密钥(Master Secret)，它是对称密钥，用于对后续的HTTP请求/响应的数据加解密。
+
+生成完毕之后，客户端发一个`Change Cipher Spec`告诉服务端开始使用加密方式发送消息。
+
+然后客户端再发一个`Encrypted Handshake Message (Finished)`消息，把之前所有发送的数据做个摘要，再用会话密钥加密一下，让服务器做校验，验证加密通信是否可用以及之前的握手信息是否被中途篡改过。
+
+可以发现在`Change Cipher Spec`之前传输的TLS握手数据都是明文、之后都是对称密钥加密的密文。
+
+#### TLS第四次握手
+
+服务器也是同样的操作，发`Change Cipher Spec`和`Encrypted Handshake Message`。如果双方都验证加密和解密没问题，那么握手就完成了。
+
+### RSA算法的缺陷
+
+用RSA算法的最大缺陷是不支持前向保密。
+
+因为RSA算法的安全性是基于长期使用的服务端私钥的。
+
+假如有个攻击者一直收集着几年来的某个网站的所有通信信息，然后在某一天服务端的RSA密钥泄露了，那么攻击者就可以根据泄露的密钥解密之前几年内搜集到的所有通信信息了。
+
+所以更现代的算法是`ECDHE`密钥协商算法。
+
+## HTTPS ECDHE 握手解析
+
