@@ -49,7 +49,9 @@ export default defineConfig({
                     {text: '基础',link:'/MySQL/基础'},
                     {text: '索引',link:'/MySQL/索引'},
                     {text: 'B+树',link:'/MySQL/为什么MySQL用B+树'},
+                    {text: '事务',link:'/MySQL/事务'},
                     {text: '锁篇',link:'/MySQL/锁篇'},
+                    {text: '日志',link:'/MySQL/日志'},
                 ]
             },
             {
@@ -57,7 +59,7 @@ export default defineConfig({
                 items: [
                     {text: '基础',link:'/network/计网基础'},
                     {text: 'HTTP',link:'/network/HTTP篇'},
-                    {text: '事务',link:'/network/事务'},
+
                 ]
             },
             {
