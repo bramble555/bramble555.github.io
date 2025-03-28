@@ -52,6 +52,7 @@ export default defineConfig({
                     {text: '事务',link:'/MySQL/事务'},
                     {text: '锁篇',link:'/MySQL/锁篇'},
                     {text: '日志',link:'/MySQL/日志'},
+                    {text: '内存',link:'/MySQL/内存'},
                 ]
             },
             {
