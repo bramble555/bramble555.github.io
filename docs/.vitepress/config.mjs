@@ -79,6 +79,7 @@ export default defineConfig({
                 text: 'Java学习',
                 items: [
                     {text: '并发编程', link: '/Java/并发编程'},
+                    {text: 'JVM虚拟机', link: '/Java/JVM虚拟机'}
                 ]
             }
         ],
