@@ -64,9 +64,16 @@ export default defineConfig({
                 ]
             },
             {
-                text: '其他',
+                text: 'Java学习',
                 items: [
-                    {text: '杂项', link: '/others/其他'},
+                    {text: '并发编程', link: '/Java/并发编程'},
+                    {text: 'JVM虚拟机', link: '/Java/JVM虚拟机'}
+                ]
+            },
+            {
+                text: 'Redis学习',
+                items: [
+                    {text: '面试篇', link: '/Redis/面试篇'},
                 ]
             },
             {
@@ -76,12 +83,11 @@ export default defineConfig({
                 ]
             },
             {
-                text: 'Java学习',
+                text: '其他',
                 items: [
-                    {text: '并发编程', link: '/Java/并发编程'},
-                    {text: 'JVM虚拟机', link: '/Java/JVM虚拟机'}
+                    {text: '杂项', link: '/others/其他'},
                 ]
-            }
+            },
         ],
 
         socialLinks: [
