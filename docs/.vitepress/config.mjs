@@ -77,6 +77,12 @@ export default defineConfig({
                 ]
             },
             {
+                text: '操作系统学习',
+                items: [
+                    {text: '面试篇', link: '/os/面试篇'},
+                ]
+            },
+            {
                 text: '面试相关',
                 items: [
                     {text: '面经', link: '/interview/面经'},
