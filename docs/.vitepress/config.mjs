@@ -53,6 +53,7 @@ export default defineConfig({
                     {text: '锁篇',link:'/MySQL/锁篇'},
                     {text: '日志',link:'/MySQL/日志'},
                     {text: '内存',link:'/MySQL/内存'},
+                    {text: '面试',link:'/MySQL/面试'},
                 ]
             },
             {
@@ -67,7 +68,8 @@ export default defineConfig({
                 text: 'Java学习',
                 items: [
                     {text: '并发编程', link: '/Java/并发编程'},
-                    {text: 'JVM虚拟机', link: '/Java/JVM虚拟机'}
+                    {text: 'JVM虚拟机', link: '/Java/JVM虚拟机'},
+                    {text: '面试篇', link: '/Java/面试篇'},
                 ]
             },
             {
