@@ -77,6 +77,7 @@ export default defineConfig({
                 text: 'Redis学习',
                 items: [
                     {text: '面试篇', link: '/Redis/面试篇'},
+                    {text: '面试篇', link: '/Redis/数据类型篇'},
                 ]
             },
             {
