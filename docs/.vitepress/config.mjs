@@ -87,6 +87,12 @@ export default defineConfig({
                 ]
             },
             {
+                text: '分布式',
+                items: [
+                    {text: '分布式学习', link: '/Distributed/分布式学习'},
+                ]
+            },
+            {
                 text: '面试相关',
                 items: [
                     {text: '面经', link: '/interview/面经'},
