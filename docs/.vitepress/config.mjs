@@ -96,6 +96,7 @@ export default defineConfig({
                 text: '面试相关',
                 items: [
                     {text: '面经', link: '/interview/面经'},
+                    {text: '设计模式', link: '/interview/设计模式'},
                 ]
             },
             {
