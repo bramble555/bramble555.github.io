@@ -93,6 +93,18 @@ export default defineConfig({
                 ]
             },
             {
+                text: 'linux',
+                items: [
+                    {text: 'linux面试篇', link: '/linux/linux面试篇'},
+                ]
+            },
+            {
+                text: 'springboot',
+                items: [
+                    {text: 'springboot面试篇', link: '/springboot/springboot面试篇'},
+                ]
+            },
+            {
                 text: '面试相关',
                 items: [
                     {text: '面经', link: '/interview/面经'},
