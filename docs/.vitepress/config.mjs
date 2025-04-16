@@ -71,6 +71,7 @@ export default defineConfig({
                     {text: '并发编程', link: '/Java/并发编程'},
                     {text: 'JVM虚拟机', link: '/Java/JVM虚拟机'},
                     {text: '面试篇', link: '/Java/面试篇'},
+                    {text: '常见集合篇', link: '/Java/常见集合篇'},
                 ]
             },
             {
