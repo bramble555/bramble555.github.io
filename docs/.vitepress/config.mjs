@@ -62,7 +62,7 @@ export default defineConfig({
                     {text: '基础', link: '/network/计网基础'},
                     {text: 'HTTP', link: '/network/HTTP篇'},
                     {text: '面试篇', link: '/network/面试篇'},
-
+                    {text: 'TCP篇', link: '/network/TCP篇'},
                 ]
             },
             {
