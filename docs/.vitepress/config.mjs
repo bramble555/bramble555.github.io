@@ -113,6 +113,12 @@ export default defineConfig({
                 ]
             },
             {
+                text: '我的面试经历',
+                items: [
+                    {text: '1.字节国际电商', link: '/myInterview/第一次面试-字节国际电商'},
+                ]
+            },
+            {
                 text: '其他',
                 items: [
                     {text: '杂项', link: '/others/其他'},
