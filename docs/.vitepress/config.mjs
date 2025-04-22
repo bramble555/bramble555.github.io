@@ -119,6 +119,7 @@ export default defineConfig({
                     {text: '2.广州华资软件', link: '/myInterview/2.第二次面试-广州华资软件公司'},
                     {text: '3.腾讯元宝', link: '/myInterview/3.第三次面试-腾讯云宝开发'},
                     {text: '4.字节懂车帝', link: '/myInterview/4.第四次面试-字节懂车帝后端'},
+                    {text: '5.字节懂车帝', link: '/myInterview/5.第五次面试-腾讯元宝二面'},
                 ]
             },
             {
