@@ -121,6 +121,7 @@ export default defineConfig({
                     {text: '4.字节懂车帝', link: '/myInterview/4.第四次面试-字节懂车帝后端'},
                     {text: '5.腾讯元宝二面', link: '/myInterview/5.第五次面试-腾讯元宝二面'},
                     {text: '6.腾讯元宝三面', link: '/myInterview/6.第六次面试-腾讯元宝三面'},
+                    {text: '7.终章-腾讯元宝offer', link: '/myInterview/7.终章-腾讯元宝offer'},
                 ]
             },
             {
