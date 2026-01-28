@@ -2,7 +2,7 @@
 layout: home
 
 hero:
-  name: WJZ_P的个人博客
+  name: bramble 的个人博客
   text: 欢迎！
   tagline: —— By WJZ_P
   image:
@@ -14,7 +14,7 @@ hero:
       link: /introduction/自我介绍.md
     - theme: alt
       text: View on GitHub
-      link: https://github.com/WJZ-P/WJZ-P.github.io
+      link: https://github.com/bramble555/bramble555.github.io
 
 features:
   - icon: ⚡️
