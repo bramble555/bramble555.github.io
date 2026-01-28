@@ -2,9 +2,9 @@
 layout: home
 
 hero:
-  name: bramble 的个人博客
+  name: bramble555 的个人博客
   text: 欢迎！
-  tagline: —— By WJZ_P
+  tagline: —— By bramble555
   image:
     src: /hi.png
     alt: gyx
