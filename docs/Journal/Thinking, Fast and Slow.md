@@ -44,13 +44,21 @@ In fact, stories can oftentimes be false or exaggerated.
 
 ## Peak-End Rule
 
+People tend to remember the best moment and the ending of a trip.They usually forget the length of the trip or what happened along the way, especially if there was a really good or really bad moment and a memorable ending.
 
+For work, it’s often better to pick somewhere closer so you don’t spend too much time commuting, if your budget allows.
+
+For running, don’t quit when you feel the most tired. Try to finish strong.
+
+The same goes for life.
 
 
 
 ## Planning Fallacy
 
+Avoid making plans when you’re in a very good mood, because you’re more likely to think things will take less time than they actually do.
 
+Instead, try to base your plan on the average time others spend doing similar work in your field.
 
 ## Halo Effect
 
@@ -59,8 +67,6 @@ When we see people in respectable professions, like teachers, lawyers, dancers, 
 But in reality, their personal lives — including their qualities or sexual lives — can be very different from what we imagine. They might be complicated, messy, or simply not as perfect as people expect.
 
 
-
-I ganna sleep . Tomorrow I will continue to write it. byee
 
 
 
