@@ -50,13 +50,13 @@ For work, it’s often better to pick somewhere closer so you don’t spend too 
 
 For running, don’t quit when you feel the most tired. Try to finish strong.
 
-The same goes for life.
+The same goes for life. Maybe you dont like it when scrolling through your phone for a long time
 
 
 
 ## Planning Fallacy
 
-Avoid making plans when you’re in a very good mood, because you’re more likely to think things will take less time than they actually do.
+Avoid locking in plans when you’re in a very good mood, because you’re more likely to think things will take less time than they actually do.
 
 Instead, try to base your plan on the average time others spend doing similar work in your field.
 
@@ -68,7 +68,25 @@ But in reality, their personal lives — including their qualities or sexual liv
 
 
 
+## Law of Small Numbers
 
+People often believe that something supported by statistics must be true. That’s a common assumption.
+
+However, in effect, the sample size may be too small to draw a reliable conclusion. Statistics based on limited data can easily be misleading.
+
+
+
+Another example is when a friend describes someone’s personality. You might immediately associate that personality with a stereotype, such as thinking the person is probably a programmer.
+
+But statistically speaking, it may actually be more likely that the person is a salesperson, simply because there are far more salespeople than programmers. People often ignore the base rate and rely on stereotypes instead.
+
+
+
+## Availability Heuristic
+
+Sometimes you see news about a major plane crash, and it makes you feel too scared to fly. But the truth is, even a year later, the actual risk of flying is usually about the same.
+
+You need to remember that news often reports rare and dramatic events. Don’t let those low-probability stories control your decisions.
 
 
 

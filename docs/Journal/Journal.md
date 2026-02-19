@@ -13,3 +13,20 @@ I don't know how long I can keep this up, but I'm going to stick with it.
 2026.2.14:
 
 I cant follow the schedule,because I got caught up watching TV after dinner. Damn it!
+
+
+
+2026.2.15:
+
+I got up to pee in the middle of the night. And then I checked my phone, and then I couldt fall back asslep.
+
+I need to kick the bad habit.
+
+
+
+2026.2.18:
+
+I totally hit it off with a classmate today! Out of nowhere, we found out we're both into funds. Even though we've known each other for five years, we barely talked. But man, she’s such a chatterbox and I’m loving it. I'm so hyped!
+
+
+
