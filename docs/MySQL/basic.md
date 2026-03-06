@@ -169,27 +169,37 @@ select *2* * *7* as res from dual; /*计算器*/ (dual是伪表)
 条件:
 
 ```sql
-< > = != and or
+< > = != and or,  只有 and, 没有 &&
 between... and ...
 in(a,b,c)    主查询表很大，子查询表很小用 in  主查询表很小，子查询表很大 用 where exist
 like      %表示0个或者多个字符,_表示任意单个字符
 is null   或者  != 'null 
 sum avg  count(distinct)  >all() 可以与 >max 等价  any 可以与 min 等价 
+									
 FLOOR abs CEILING  round   truncate 
 order by   desc asc
 group by
 CONCAT  横向拼接   GROUP_CONCAT   纵向拼接
 distinct   group_concat(distinct column_name)
 separator 拼接方式
-having   having 和 合计函数  使用,where 不能和 合计函数使用
+having   having 和 group 合计函数  使用,没有group by 不能用 having; where 不能和 合计函数使用
 limit   个数
 (先where 后order 后 limit)
 (聚合 from 后group 后 having (不能用别名),order by  可以用别名)
+on 是俩张表咋链接 应用场景: 日期差一天;where 是 结果已经生成后，单表把不想要的行直接扔掉
 
-IF(age >= 25, '25岁及以上', '25岁以下') AS age_cut  
+IF(age >= 25, '25岁及以上', '25岁以下') AS age_cut
+    CASE 
+        WHEN age IS NULL THEN '其他'               -- 年龄为空，归类为其他
+        WHEN age < 20 THEN '20岁以下'              -- 年龄小于20岁
+        WHEN age BETWEEN 20 AND 24 THEN '20-24岁'    -- 年龄在20至24岁之间
+        WHEN age >= 25 THEN '25岁及以上'            -- 年龄大于等于25岁
+    END AS age_cut
 
 (from 0 join A join B where 条件)
 (from 0 join A join B group by  having )
+
+where phone_number regexp '^[1-9][0-9]{2}-?[0-9]{3}-?[0-9]{4}$'
 ```
 
 union (去重,速度慢)
@@ -219,4 +229,27 @@ using (column_name) = join table_name  on 条件
 先进行后面的查询,作为子表,然后这个作为主表的条件
 
 一般情况下子查询结果返回超过1行用`in`，只有一行可以用`=`
+
+
+
+### 内置函数
+
+`day()` 是一个内置函数，用来从日期（比如 `2021-08-15`）里提取出**天数**（返回 `15`）。
+
+同理, `month()`和 `year()`
+
+where month(date)=8 and year(date)=2021
+
+where month(date)=8 and year(date)=2021
+
+
+
+` DATE_ADD`('2021-08-01', INTERVAL 1 MONTH); 
+-- 结果：2021-09-01
+
+
+
+
+
+
 
