@@ -1,6 +1,6 @@
 # 《Never Split the Difference》核心谈判笔记
 
-作者：Chris Voss（前FBI人质谈判专家）
+作者：Chris Voss
 
 核心思想：
 **谈判不是逻辑对抗，而是情绪管理。**
