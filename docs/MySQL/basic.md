@@ -166,7 +166,170 @@ select * from table_name;
 
 select *2* * *7* as res from dual; /*计算器*/ (dual是伪表)
 
+
+
 条件:
+
+好的，我帮你整理了一份关于 SQL 的笔记，涵盖了你提到的常见操作和函数。你可以用这个笔记来复习 SQL 的基本操作，特别是准备春招时会用到的。
+
+------
+
+### **SQL 常见条件和运算符**
+
+- **`<`、`>`、`=`、`!=`、`<>`**：比较运算符
+
+- **`AND`、`OR`**：逻辑运算符
+
+- **`BETWEEN`**：区间筛选，包含边界
+
+  ```sql
+  SELECT * FROM table WHERE column BETWEEN 100 AND 200;
+  ```
+
+- **`IN`**：匹配多个值，适用于子查询表较小时
+
+  ```sql
+  SELECT * FROM table WHERE column IN (1, 2, 3);
+  ```
+
+- **`EXISTS`**：适用于主查询表较小时，判断子查询是否有结果
+
+  ```sql
+  SELECT * FROM table WHERE EXISTS (SELECT 1 FROM another_table WHERE condition);
+  ```
+
+- **`LIKE`**：模糊查询，`%` 表示任意多个字符，`_` 表示一个字符
+
+- **`IS NULL`**：判断是否为空
+
+### **聚合函数**
+
+- **`SUM()`**：求和
+
+- **`AVG()`**：计算平均值
+
+- **`COUNT(DISTINCT)`**：计数不重复的值
+
+  ```sql
+  SELECT COUNT(DISTINCT department_id) FROM employees;
+  ```
+
+- **`> ALL()` 和 `> MAX()`**：与最大值对比
+
+  ```sql
+  SELECT * FROM employees WHERE salary > ALL (SELECT salary FROM employees WHERE department_id = 1);
+  ```
+
+- **` >ANY()` 和 `>MIN()`**：与最小值对比
+
+  ```sql
+  SELECT * FROM employees WHERE salary > ANY (SELECT salary FROM employees WHERE department_id = 1);
+  ```
+
+### **数学函数**
+
+- **`FLOOR()`**
+- **`ABS()`**
+- **`CEILING()`**
+- **`ROUND()`**
+- **`TRUNCATE()`**
+
+### **字符串操作**
+
+- **`CONCAT()`**：横向拼接字符串
+
+  ```sql
+  SELECT CONCAT(first_name, ' ', last_name) FROM employees;
+  ```
+
+  char_length(): 计算字符长度函数的
+
+  length():
+
+  ****
+
+- **`GROUP_CONCAT()`**：纵向拼接，合并多行数据为一行
+
+  ```sql
+  SELECT department_id, GROUP_CONCAT(employee_name) FROM employees GROUP BY department_id;
+  ```
+
+- **`DISTINCT`**：去重
+
+  ```sql
+  SELECT DISTINCT department_id FROM employees;
+  ```
+
+- **`GROUP_CONCAT(DISTINCT column_name)`**：纵向拼接并去重
+
+  ```sql
+  SELECT department_id, GROUP_CONCAT(DISTINCT employee_name) FROM employees GROUP BY department_id;
+  ```
+
+- **`SEPARATOR`**：指定拼接的分隔符
+
+  ```sql
+  SELECT department_id, GROUP_CONCAT(employee_name SEPARATOR ', ') FROM employees GROUP BY department_id;
+  ```
+
+### **`HAVING` 和 `WHERE`**
+
+- **`HAVING`**：用于聚合后的过滤
+
+  ```sql
+  SELECT department_id, AVG(salary) FROM employees GROUP BY department_id HAVING AVG(salary) > 5000;
+  ```
+
+- **`WHERE`**：通常用于普通的行过滤，不能用于聚合函数
+
+  ```sql
+  SELECT * FROM employees WHERE salary > 3000;
+  ```
+
+### **排序和限制结果**
+
+- **`ORDER BY`**：排序，`ASC` 为升序（默认），`DESC` 为降序
+- **`LIMIT`**：
+
+### **`IF` 和 `CASE WHEN THEN` 条件表达式**
+
+- **`IF`**：用于简单的条件判断
+
+  ```sql
+  SELECT IF(age >= 25, '25岁及以上', '25岁以下') AS age_cut FROM employees;
+  ```
+
+- **`CASE WHEN THEN`**：用于更复杂的多条件判断
+
+  ```sql
+  SELECT CASE
+             WHEN age IS NULL THEN '其他'
+             WHEN age < 20 THEN '20岁以下'
+             WHEN age BETWEEN 20 AND 24 THEN '20-24岁'
+             WHEN age >= 25 THEN '25岁及以上'
+          END AS age_cut
+  FROM employees;
+  ```
+
+### **日期和正则表达式**
+
+CURDATE()返回的是DATE类型
+
+Now()返回的是DATETIME类型
+
+- **日期加一天**
+
+  ```sql
+  SELECT DATE_ADD(CURDATE(), INTERVAL 1 DAY);  -- 当前日期 + 1天
+  ```
+
+- **正则表达式**：匹配特定格式的字符串
+
+  ```sql
+  SELECT * FROM users WHERE phone_number REGEXP '^[1-9][0-9]{2}-?[0-9]{3}-?[0-9]{4}$';
+  ```
+
+
 
 ```sql
 < > = != and or,  只有 and, 没有 &&
@@ -232,20 +395,21 @@ using (column_name) = join table_name  on 条件
 
 
 
-### 内置函数
+## sql Hot50（基础版）
 
-`day()` 是一个内置函数，用来从日期（比如 `2021-08-15`）里提取出**天数**（返回 `15`）。
+1581 左连接，筛选出 is null
 
-同理, `month()`和 `year()`
+自连接
 
-where month(date)=8 and year(date)=2021
+197
 
-where month(date)=8 and year(date)=2021
+1661
+
+inner join
+
+1280
 
 
-
-` DATE_ADD`('2021-08-01', INTERVAL 1 MONTH); 
--- 结果：2021-09-01
 
 
 
