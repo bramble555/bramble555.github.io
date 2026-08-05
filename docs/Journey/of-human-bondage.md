@@ -364,7 +364,7 @@ if (typeof window !== 'undefined') {
 			document.querySelectorAll('.lang').forEach(el=>el.style.display='none');
 			var el=document.getElementById(l);
 			if(el) el.style.display='block';
-		}
+		}啊
 		function setLang(l){
 			try{ history.replaceState(null,'', '?lang='+l) }catch(e){}
 			localStorage.setItem('bramble_lang',l);
