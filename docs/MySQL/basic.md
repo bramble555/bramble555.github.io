@@ -310,12 +310,18 @@ select *2* * *7* as res from dual; /*计算器*/ (dual是伪表)
           END AS age_cut
   FROM employees;
   ```
+  
+  ifnull(,0)
+  
+  
 
 ### **日期和正则表达式**
 
 CURDATE()返回的是DATE类型
 
 Now()返回的是DATETIME类型
+
+left(，7)取年和月
 
 - **日期加一天**
 
@@ -331,39 +337,7 @@ Now()返回的是DATETIME类型
 
 
 
-```sql
-< > = != and or,  只有 and, 没有 &&
-between... and ...
-in(a,b,c)    主查询表很大，子查询表很小用 in  主查询表很小，子查询表很大 用 where exist
-like      %表示0个或者多个字符,_表示任意单个字符
-is null   或者  != 'null 
-sum avg  count(distinct)  >all() 可以与 >max 等价  any 可以与 min 等价 
-									
-FLOOR abs CEILING  round   truncate 
-order by   desc asc
-group by
-CONCAT  横向拼接   GROUP_CONCAT   纵向拼接
-distinct   group_concat(distinct column_name)
-separator 拼接方式
-having   having 和 group 合计函数  使用,没有group by 不能用 having; where 不能和 合计函数使用
-limit   个数
-(先where 后order 后 limit)
-(聚合 from 后group 后 having (不能用别名),order by  可以用别名)
-on 是俩张表咋链接 应用场景: 日期差一天;where 是 结果已经生成后，单表把不想要的行直接扔掉
 
-IF(age >= 25, '25岁及以上', '25岁以下') AS age_cut
-    CASE 
-        WHEN age IS NULL THEN '其他'               -- 年龄为空，归类为其他
-        WHEN age < 20 THEN '20岁以下'              -- 年龄小于20岁
-        WHEN age BETWEEN 20 AND 24 THEN '20-24岁'    -- 年龄在20至24岁之间
-        WHEN age >= 25 THEN '25岁及以上'            -- 年龄大于等于25岁
-    END AS age_cut
-
-(from 0 join A join B where 条件)
-(from 0 join A join B group by  having )
-
-where phone_number regexp '^[1-9][0-9]{2}-?[0-9]{3}-?[0-9]{4}$'
-```
 
 union (去重,速度慢)
 
@@ -397,7 +371,19 @@ using (column_name) = join table_name  on 条件
 
 ## sql Hot50（基础版）
 
+COUNT 配 NULL，AVG 配 0
+
+avg(case when rating < 3 then 1 else 0 end)
+
+条件state = 'approved'  是1或者0，所以统计个数用sum，而不是count
+
+
+
 1581 左连接，筛选出 is null
+
+1934 部分除以总数 SUM(c.action = 'confirmed') / COUNT(c.action)
+
+1251 左表和右边部分相乘，SUM(p.price * u.units) / SUM(u.units),某个日期位于起始日期和结束日期之间:u.purchase_date   between p.start_date  and p.end_date
 
 自连接
 
@@ -408,6 +394,12 @@ using (column_name) = join table_name  on 条件
 inner join
 
 1280
+
+分组查询+聚合函数
+
+1211
+
+550注册之后，第二天还上线的概率
 
 
 
