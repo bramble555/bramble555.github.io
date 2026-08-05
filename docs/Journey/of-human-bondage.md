@@ -358,7 +358,27 @@ Because I believe I will never stop growing.
 </div>
 
 <script>
-function showLang(l){document.querySelectorAll('.lang').forEach(el=>el.style.display='none');var el=document.getElementById(l);if(el)el.style.display='block'}
-function setLang(l){try{history.replaceState(null,'', '?lang='+l)}catch(e){}localStorage.setItem('bramble_lang',l);showLang(l)}
-(function(){var q=new URLSearchParams(location.search).get('lang');var ls=localStorage.getItem('bramble_lang');var nav=(navigator.language||'').toLowerCase();var def=(q||ls||(nav.indexOf('zh')===0?'zh':'en'));showLang(def)})();
+if (typeof window !== 'undefined') {
+	(function(){
+		function showLang(l){
+			document.querySelectorAll('.lang').forEach(el=>el.style.display='none');
+			var el=document.getElementById(l);
+			if(el) el.style.display='block';
+		}
+		function setLang(l){
+			try{ history.replaceState(null,'', '?lang='+l) }catch(e){}
+			localStorage.setItem('bramble_lang',l);
+			showLang(l);
+		}
+		// expose for inline onclick handlers
+		window.setLang = setLang;
+		window.showLang = showLang;
+
+		var q = new URLSearchParams(location.search).get('lang');
+		var ls = localStorage.getItem('bramble_lang');
+		var nav = (navigator.language || '').toLowerCase();
+		var def = (q || ls || (nav.indexOf('zh')===0 ? 'zh' : 'en'));
+		showLang(def);
+	})();
+}
 </script>
